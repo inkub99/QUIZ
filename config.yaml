@@ -1,0 +1,14 @@
+app:
+  page_title: "AI Quizup"
+  page_icon: "🤖"
+  title: "🤖 AI Quizup 📚"
+  onboarding:
+    - "¡Bienvenido a mi aplicación de quiz! 🎉"
+    - "Aquí encontrarás un divertido desafío de preguntas y respuestas para probar tus conocimientos. 🧠"
+    - "¡Es muy fácil de usar! Simplemente sigue estos simples pasos:"
+    - "1️⃣ Utiliza los botones `Pregunta previa` y `Pregunta siguiente` para navegar entre las preguntas de manera sencilla."
+    - "2️⃣ Lee atentamente cada pregunta y selecciona la respuesta que consideres correcta en la lista de opciones de selección múltiple. 🗒️✏️"
+    - "3️⃣ ¡No te preocupes si te equivocas! En el contador podrás ver cuántas preguntas has respondido correctamente y cuántas te has equivocado. 📈👍❌"
+    - "4️⃣ Después de responder, aparecerá una caja de texto con una explicación detallada sobre por qué una de las respuestas listadas es correcta. Así podrás aprender y mejorar tus conocimientos en cada intento. 📚🔍"
+    - "¡Y eso es todo! Ahora puedes disfrutar de la emoción de aprender mientras juegas. 🤩📲"
+    - "¿Estás listo para comenzar? Haz clic en el botón para empezar a responder las preguntas y demostrar tus habilidades. ¡Buena suerte y que te diviertas! 🌟🎯"
