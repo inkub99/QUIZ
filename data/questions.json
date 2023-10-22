@@ -1,0 +1,52 @@
+[
+    {
+        "question": "¿Qué es la inteligencia artificial?",
+        "options": [
+            "La capacidad de una máquina para realizar funciones cognitivas",
+            "El estudio de las emociones humanas",
+            "La habilidad de una máquina para entender y hablar lenguajes humanos"
+        ],
+        "answer": "La capacidad de una máquina para realizar funciones cognitivas",
+        "explanation": "La inteligencia artificial se refiere a la capacidad de una máquina para realizar tareas que normalmente requieren habilidades humanas, como percepción, razonamiento, aprendizaje y resolución de problemas."
+    },
+    {
+        "question": "¿En qué se basa el Machine Learning?",
+        "options": [
+            "Algoritmos que aprenden de los datos sin reglas predefinidas",
+            "Programación basada en reglas sin intervención de datos",
+            "Implementación de algoritmos basados en reglas de aprendizaje humano"
+        ],
+        "answer": "Algoritmos que aprenden de los datos sin reglas predefinidas",
+        "explanation": "Machine Learning se basa en la capacidad de los algoritmos para aprender de los datos sin ser programados explícitamente, permitiendo que las máquinas mejoren automáticamente su rendimiento a medida que obtienen más experiencia."
+    },
+    {
+        "question": "¿Cuál es la principal diferencia entre Deep Learning y Machine Learning?",
+        "options": [
+            "Deep Learning puede procesar una gama más amplia de recursos de datos",
+            "Machine Learning requiere menos intervención humana",
+            "Deep Learning se basa en algoritmos más complejos"
+        ],
+        "answer": "Deep Learning puede procesar una gama más amplia de recursos de datos",
+        "explanation": "Deep Learning es una forma de Machine Learning que puede procesar una variedad más amplia de datos, como imágenes y texto, y puede producir resultados más precisos en comparación con el aprendizaje automático tradicional."
+    },
+    {
+        "question": "¿Qué es Generative AI?",
+        "options": [
+            "Algoritmos que pueden crear contenido nuevo como audio, código e imágenes",
+            "La capacidad de una máquina para razonar y tomar decisiones",
+            "El estudio de cómo las máquinas pueden interactuar con los humanos"
+        ],
+        "answer": "Algoritmos que pueden crear contenido nuevo como audio, código e imágenes",
+        "explanation": "Generative AI se refiere a algoritmos que pueden generar contenido original, como música, imágenes, código y texto. Estos algoritmos tienen la capacidad de crear nuevas obras basadas en patrones y características aprendidas de datos previos."
+    },
+    {
+        "question": "¿Qué dijo el Dr. Andrew Ng sobre la inteligencia artificial?",
+        "options": [
+            "La inteligencia artificial es la nueva electricidad",
+            "La inteligencia artificial es un mito",
+            "La inteligencia artificial puede reemplazar a los humanos"
+        ],
+        "answer": "La inteligencia artificial es la nueva electricidad",
+        "explanation": "El Dr. Andrew Ng, un experto en inteligencia artificial, describió a la inteligencia artificial como 'la nueva electricidad', destacando su importancia e impacto en la sociedad, al igual que la electricidad lo fue en su momento."
+    }
+]
