@@ -12,3 +12,12 @@ app:
     - "4️⃣ Después de responder, aparecerá una caja de texto con una explicación detallada sobre por qué una de las respuestas listadas es correcta. Así podrás aprender y mejorar tus conocimientos en cada intento. 📚🔍"
     - "¡Y eso es todo! Ahora puedes disfrutar de la emoción de aprender mientras juegas. 🤩📲"
     - "¿Estás listo para comenzar? Haz clic en el botón para empezar a responder las preguntas y demostrar tus habilidades. ¡Buena suerte y que te diviertas! 🌟🎯"
+  quiz:
+    prev: "Previa ⬅️"
+    next: "Siguiente ➡️"
+    choice: "💡 Tu respuesta:"
+    correct: "Tu respuesta es la correcta 🥳"
+    wrong: "Disculpa 😔, la respuesta correcta era: "
+    explanation: "Explaciación 👩‍🏫"
+    counter_right: "✅ Respuestas acertadas: "
+    counter_wrong: "❌ Respuestas equivocadas: "
