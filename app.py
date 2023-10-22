@@ -31,12 +31,12 @@ col1, col2, col3 = st.columns([1, 6, 1])
 
 # Add a Prev button to the left column that goes to the previous question
 with col1:
-    if col1.button("Prev"):
+    if col1.button(config.config()["app"]["quiz"]["prev"]):
         widgets.prev_question()
 
 # Add a Next button to the right column that goes to the next question
 with col3:
-    if col3.button("Next"):
+    if col3.button(config.config()["app"]["quiz"]["next"]):
         widgets.next_question()
 
 # Display the actual quiz question
