@@ -37,10 +37,8 @@ with col1:
 # Add a Next button to the right column that goes to the next question
 with col3:
     if col3.button(config.config()["app"]["quiz"]["next"]):
-        widgets.next_question()
+        widgets.next_question_v2()
 
 # Display the actual quiz question
 with col2:
-    widgets.display_question()
-
-# widgets.download_button()
+    widgets.display_question_v2()
