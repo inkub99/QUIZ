@@ -4,6 +4,7 @@ import openai
 import streamlit as st
 
 from src.quiz.get_quiz import get_quiz_from_topic
+from src.utils import config
 
 
 def display_question():
@@ -36,7 +37,7 @@ def display_question():
 
     # Display the radio button options and wait for the user to select an answer
     user_answer = options.radio(
-        "Your answer:",
+        config.config()["app"]["quiz"]["choice"],
         question["options"],
         key=st.session_state.current_question,
     )
@@ -48,7 +49,7 @@ def display_question():
     if st.session_state.current_question in st.session_state.answers:
         index = st.session_state.answers[st.session_state.current_question]
         options.radio(
-            "Your answer:",
+            config.config()["app"]["quiz"]["choice"],
             question["options"],
             key=float(st.session_state.current_question),
             index=index,
@@ -63,19 +64,23 @@ def display_question():
 
         # Check if the user's answer is correct and update the score
         if user_answer == question["answer"]:
-            st.write("Correct!")
+            st.write(config.config()["app"]["quiz"]["correct"])
             st.session_state.right_answers += 1
         else:
-            st.write(f"Sorry, the correct answer was {question['answer']}.")
+            st.write(f"{config.config()['app']['quiz']['wrong']}{question['answer']}.")
             st.session_state.wrong_answers += 1
 
         # Show an expander with the explanation of the correct answer
-        with st.expander("Explanation"):
-            st.write(question["explanation"])
+        with st.expander():
+            st.write(question[config.config()["app"]["quiz"]["explanation"]])
 
     # Display the current score
-    st.write(f"Right answers: {st.session_state.right_answers}")
-    st.write(f"Wrong answers: {st.session_state.wrong_answers}")
+    st.write(
+        f"{config.config()['app']['quiz']['counter_right']}{st.session_state.right_answers}",
+    )
+    st.write(
+        f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
+    )
 
 
 # Define a function to go to the next question
