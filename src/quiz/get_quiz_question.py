@@ -45,7 +45,7 @@ chat_history = [
 
 # I define a function that takes a topic string and an API key, and returns a dictionary with
 # a quiz question, options, answer, and explanation.
-def get_quiz_from_topic(topic: str, api_key: str) -> dict[str, str]:
+def get_quiz_question_from_topic(topic: str, api_key: str) -> dict[str, str]:
     global chat_history
 
     # I set the OpenAI API key.
