@@ -43,7 +43,10 @@ def display_question():
     )
 
     # Display the submit button and disable it if necessary
-    submit_button = st.button("Submit", disabled=submit_button_disabled)
+    submit_button = st.button(
+        config.config()["app"]["quiz"]["submit"],
+        disabled=submit_button_disabled,
+    )
 
     # If the user has already answered this question, display their previous answer
     if st.session_state.current_question in st.session_state.answers:
