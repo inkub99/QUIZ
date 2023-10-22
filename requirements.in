@@ -1,0 +1,8 @@
+# dev
+pre-commit
+bandit
+
+# app
+openai
+streamlit
+watchdog
