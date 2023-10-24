@@ -22,3 +22,5 @@ app:
     counter_right: "✅ Respuestas acertadas: "
     counter_wrong: "❌ Respuestas equivocadas: "
     submit: "Responder"
+    over_message: "## Quiz terminado! 👍 "
+    score_message: "### Puntuación Final: "
