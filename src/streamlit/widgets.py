@@ -7,8 +7,6 @@ from src.quiz.get_quiz_question import get_quiz_question_from_topic
 from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
 
-quiz = None
-
 
 def display_question():
     # Handle first case
@@ -93,17 +91,15 @@ def display_question():
 
 
 def display_question_v2():
-    global quiz
     # Handle first case
     if len(st.session_state.questions) == 0:
         try:
             quiz = load_quiz()
             first_question = quiz[0]
-        except openai.error.AuthenticationError:
+        except FileNotFoundError:
             st.error(
-                "Please enter a valid OpenAI API key in the left sidebar to proceed. "
-                "To know how to obtain the key checkout readme for this project here: "
-                "https://github.com/Dibakarroy1997/QuizWhizAI/blob/main/README.md",
+                "The file containing the pre-generated questions could not be loaded. "
+                "Please check your data folder...",
             )
             return
         st.session_state.questions.append(first_question)
@@ -114,7 +110,19 @@ def display_question_v2():
     )
 
     # Get the current question from the questions list
-    question = st.session_state.questions[st.session_state.current_question]
+    try:
+        question = st.session_state.questions[st.session_state.current_question]
+    except IndexError:
+        st.markdown(config.config()["app"]["quiz"]["over_message"])
+        st.markdown(config.config()["app"]["quiz"]["score_message"])
+        # Display the current score
+        st.write(
+            f"{config.config()['app']['quiz']['counter_right']}{st.session_state.right_answers}",
+        )
+        st.write(
+            f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
+        )
+        return
 
     # Display the question prompt
     st.write(f"{st.session_state.current_question + 1}. {question['question']}")
@@ -192,18 +200,25 @@ def next_question():
 
 
 def next_question_v2():
-    global quiz
     # Move to the next question in the questions list
     st.session_state.current_question += 1
+
+    try:
+        quiz = load_quiz()
+    except FileNotFoundError:
+        st.error(
+            "The file containing the pre-generated questions could not be loaded. "
+            "Please check your data folder...",
+        )
+        return
 
     # If we've reached the end of the questions list, get a new question
     if st.session_state.current_question > len(st.session_state.questions) - 1:
         try:
             next_question = quiz[st.session_state.current_question]
-        except openai.error.AuthenticationError:
-            st.session_state.current_question -= 1
+            st.session_state.questions.append(next_question)
+        except IndexError:
             return
-        st.session_state.questions.append(next_question)
 
 
 # Define a function to go to the previous question
