@@ -24,3 +24,17 @@ app:
     submit: "Responder"
     over_message: "## Quiz terminado! 👍 "
     score_message: "### Puntuación Final: "
+  sidebar: "Elige una de las opciones arriba"
+  contact:
+    title: "Información de Contacto"
+    name: "Kevin Knights"
+    description: "Ingeniero de Datos y Machine Learning, apasionado en creación de productos de IA"
+    email: "kevin.k.knigths@gmail.com"
+    youtube: "https://www.youtube.com/channel/UCPP7F-eLSi4Eyl4tY6--N8w"
+    linkedin: "https://www.linkedin.com/in/knightsk/"
+    github: "https://github.com/kevinknights29"
+    twitter: "https://twitter.com/kevin_knights"
+    connect_label: "🤝 Conectar en LinkedIn"
+    download_label: "📄 Descargar CV"
+  project:
+    title: "Información del Proyecto"
