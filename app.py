@@ -20,6 +20,9 @@ st.set_page_config(
 )
 st.title(config.config()["app"]["title"])
 
+# Sidebar Enablement
+st.sidebar.success(config.config()["app"]["sidebar"])
+
 # Add App Onboarding
 st.markdown(
     "\n\n".join(config.config()["app"]["onboarding"]),
