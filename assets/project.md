@@ -1,145 +1,69 @@
-# PyConnect2023 Construyendo soluciones de GenAI para transformación digital
+# ¿Qué es AI y hacia donde vamos?
 
 Este repositorio contiene el contenido relacionado con la charla:
 
-`Construyendo soluciones con Generative AI para la transformación digital`
+`¿Qué es AI y hacia donde vamos?`
 
 Por: Kevin Knights
 
 **Contenido**
 
-1. [Resumen](#resumen)
-2. [Comenzando](#comenzando)
-3. [Contribuyendo](#contribuyendo)
+1. [Visión general](#vision-general)
+2. [Objetivos](#objetivos)
+3. [Alcance y contexto](#alcance-y-contexto)
+4. [Diseño del sistema](#diseño-del-sistema)
+5. [Alternativas consideradas](#alternativas-consideradas)
+6. [Registros de aprendizaje](#registros-de-aprendizaje)
+7. [Recursos](#recursos)
 
 ---
 
-![image](https://github.com/kevinknights29/PyConnect2023_GenAI_Digital_Transformation/assets/74464814/505dbbbb-fda8-4e52-a1a2-ac9b724cd72f)
+<img width="763" alt="image" src="https://github.com/kevinknights29/Introduction_to_AI_Streamlit_Quiz_App/assets/74464814/576e73b8-99e9-4f01-ba62-849e4397a921">
 
-## Resumen
+## Vision General
 
-Quería mostrar el verdadero valor de las aplicaciones GenAI.
-y la mejor manera fue crear una aplicación de chatbot para toda la conferencia.
+El documento de diseño para la aplicación web de Streamlit se centra en desarrollar una plataforma robusta e interactiva para la charla "Introducción a la IA", con el objetivo principal de evaluar el conocimiento de los participantes sobre IA a través de un cuestionario didáctico.
 
-### Idea
+La aplicación tiene como objetivo proporcionar una experiencia atractiva y fácil de usar mediante la implementación de varias características clave. Estas características incluyen:
 
-Cree una aplicación para apoyar a los participantes/asistentes del evento.
+Una interfaz de usuario bien diseñada para el cuestionario.
+Generación dinámica de preguntas.
+Retroalimentación inmediata sobre las respuestas.
+Un sistema de puntuación.
+La aplicación utilizará el framework fácil de usar de Streamlit para integrar de manera eficiente la funcionalidad del cuestionario y la evaluación de la IA, mejorando en última instancia la experiencia de aprendizaje de los participantes.
 
-### Objetivo de negocio
+## Objetivos
 
-Incrementar la satisfacción de los participantes/asistentes (CSAT = satisfacción del cliente).
+- Personalizar la experiencia de aprendizaje para los participantes.
+- Evaluar el conocimiento de los participantes sobre el tema presentado.
+- Proporcionar un ejemplo en vivo de una aplicación que aproveche la IA.
 
-### Requisitos
+## Alcance y Contexto
 
-- GUI (interfaz gráfica).
-- Base de conocimientos de conferencia.
-- Personalización (experiencia única para cada usuario).
+Este proyecto abarca el desarrollo de una aplicación web robusta e interactiva de Streamlit para la charla "Introducción a la IA".
 
-### Objetivo de GenAI (ML)
+El objetivo principal de la aplicación es evaluar el conocimiento de los participantes sobre IA a través de un cuestionario didáctico. Al aprovechar el framework de Streamlit, la aplicación tiene como objetivo crear una experiencia atractiva y fácil de usar para los participantes.
 
-Maximice la experiencia de los participantes/asistentes.
 
-### Tecnologías
+## Diseño del sistema
 
-- LangChain
-- Streamlit
-- Weaviate
-- OpenAI
+```mermaid
+flowchart LR
+    a["Presentation Text"]
+    b["OpenAI GPT3.5 Question Generation"]
+    c["Quiz App displays question to user"]
 
-![image](https://github.com/kevinknights29/PyConnect2023_GenAI_Digital_Transformation/assets/74464814/9eb34254-1686-4925-89e8-083376807e6c)
-
-### Recopilación de datos
-
-Se recopiló toda la información de texto para cada sesión en el calendario.
-
-#### Contenido de la agenda
-
-![image](https://github.com/kevinknights29/PyConnect2023_GenAI_Digital_Transformation/assets/74464814/6bd6dc82-3498-496e-9967-20b133a8a3d7)
-
-#### Ejemplo del contenido de una sesión
-
-![image](https://github.com/kevinknights29/PyConnect2023_GenAI_Digital_Transformation/assets/74464814/d51c8777-155d-4049-baae-26e3179ca84e)
-
-#### Almacenamiento de datos
-
-Con respecto a las tiendas de vectores, seleccioné weaviate porque son de código abierto y ofrecen un excelente nivel gratuito.
-
-Para crear una cuenta visita: [Weaviate - Homepage](https://weaviate.io/)
-
-![image](https://github.com/kevinknights29/PyConnect2023_GenAI_Digital_Transformation/assets/74464814/95412eb5-f4f3-4c0b-a94f-46f7a82701d8)
-
-### Selección de modelo
-
-Seleccioné OpenAI como proveedor de servicios LLM porque ofrecen una muy buena relación calidad/precio.
-
-- gpt-3.5-turbo
-- incrustación de texto-ada-002
-
-Como referencia, alrededor de 750 palabras predichas por `gpt-3.5-turbo` cuestan 0,002 USD.
-
-## Empezando
-
-### Configuración
-
-Crea el entorno virtual con:
-
-```bash
-python -m venv .venv
+    a --> b --> c
 ```
 
-Luego actívalo con:
+## Alternativas consideradas
 
-```bash
-source .venv/bin/activate
-```
+Podríamos utilizar gradio como una alternativa a Streamlit. Sin embargo, Streamlit ofrece un mejor servicio de alojamiento.
 
-Finalmente, instale dependencias con:
+## Registros de aprendizaje
 
-```bash
-pip install -r requirements.txt
-```
+| Date | Learning |
+|------|----------|
+|      |          |
 
-### Uso local
-
-Para ejecutar la aplicación Streamlit localmente, utilice:
-
-```bash
-streamlit run app.py
-```
-
-Esto abrirá automáticamente una ventana en su navegador web predeterminado.
-
-#### ¡Diviértete!
-
-![image](https://github.com/kevinknights29/PyConnect2023_GenAI_Digital_Transformation/assets/74464814/04385ebb-2d07-4a41-8823-2c156dfa1a15)
-
-## Contribuyendo
-
-### Instalación de pre-commit
-
-La libreria de pre-commit ya forma parte de las dependencias de este proyecto.
-Si desea instalarlo de forma independiente, ejecute:
-
-```bash
-pip install pre-commit
-```
-
-Para activar la pre-commit, ejecute los siguientes comandos:
-
-- Instalar ganchos de Git:
-
-```bash
-pre-commit install
-```
-
-- Actualizar ganchos actuales:
-
-```bash
-pre-commit autoupdate
-```
-
-Para probar su instalación de pre-commit utiliza:
-
-```bash
-pre-commit run --all-files
-```
+## Recursos
