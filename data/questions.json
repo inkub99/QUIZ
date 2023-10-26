@@ -2,9 +2,9 @@
     {
         "question": "¿Qué es la inteligencia artificial?",
         "options": [
+            "La habilidad de una máquina para entender y hablar lenguajes humanos",
             "La capacidad de una máquina para realizar funciones cognitivas",
-            "El estudio de las emociones humanas",
-            "La habilidad de una máquina para entender y hablar lenguajes humanos"
+            "El estudio de las emociones humanas"
         ],
         "answer": "La capacidad de una máquina para realizar funciones cognitivas",
         "explanation": "La inteligencia artificial se refiere a la capacidad de una máquina para realizar tareas que normalmente requieren habilidades humanas, como percepción, razonamiento, aprendizaje y resolución de problemas."
@@ -22,9 +22,9 @@
     {
         "question": "¿Cuál es la principal diferencia entre Deep Learning y Machine Learning?",
         "options": [
-            "Deep Learning puede procesar una gama más amplia de recursos de datos",
             "Machine Learning requiere menos intervención humana",
-            "Deep Learning se basa en algoritmos más complejos"
+            "Deep Learning se basa en algoritmos más complejos",
+            "Deep Learning puede procesar una gama más amplia de recursos de datos"
         ],
         "answer": "Deep Learning puede procesar una gama más amplia de recursos de datos",
         "explanation": "Deep Learning es una forma de Machine Learning que puede procesar una variedad más amplia de datos, como imágenes y texto, y puede producir resultados más precisos en comparación con el aprendizaje automático tradicional."
@@ -42,9 +42,9 @@
     {
         "question": "¿Qué dijo el Dr. Andrew Ng sobre la inteligencia artificial?",
         "options": [
-            "La inteligencia artificial es la nueva electricidad",
             "La inteligencia artificial es un mito",
-            "La inteligencia artificial puede reemplazar a los humanos"
+            "La inteligencia artificial puede reemplazar a los humanos",
+            "La inteligencia artificial es la nueva electricidad"
         ],
         "answer": "La inteligencia artificial es la nueva electricidad",
         "explanation": "El Dr. Andrew Ng, un experto en inteligencia artificial, describió a la inteligencia artificial como 'la nueva electricidad', destacando su importancia e impacto en la sociedad, al igual que la electricidad lo fue en su momento."
