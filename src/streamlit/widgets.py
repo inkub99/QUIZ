@@ -9,6 +9,19 @@ from src.utils import config
 
 
 def display_question():
+    """
+    Display a quiz question and handle user interactions with the question.
+
+    The function takes no parameters.
+
+    Returns:s
+        None
+
+    Raises:
+        openai.error.AuthenticationError: If the OpenAI API key is invalid or missing.
+
+    """
+
     # Handle first case
     if len(st.session_state.questions) == 0:
         try:
@@ -91,6 +104,18 @@ def display_question():
 
 
 def display_question_v2():
+    """
+    Display a quiz question and handle user interactions with the question.
+
+    The function takes no parameters.
+
+    Returns:
+        None
+
+    Raises:
+        FileNotFoundError: If the json file in the data dir is invalid or missing.
+
+    """
     # Handle first case
     if len(st.session_state.questions) == 0:
         try:
@@ -183,6 +208,18 @@ def display_question_v2():
 
 # Define a function to go to the next question
 def next_question():
+    """
+    Move to the next question in the questions list and get a new question if necessary.
+
+    The function takes no parameters.
+
+    Returns:
+        None
+
+    Raises:
+        openai.error.AuthenticationError: If the OpenAI API key is invalid or missing.
+
+    """
     # Move to the next question in the questions list
     st.session_state.current_question += 1
 
