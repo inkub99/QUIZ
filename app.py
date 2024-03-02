@@ -13,15 +13,8 @@ if "current_question" not in st.session_state:
     st.session_state.right_answers = 0
     st.session_state.wrong_answers = 0
 
-# Set Page Configuration
-st.set_page_config(
-    page_title=config.config()["app"]["page_title"],
-    page_icon=config.config()["app"]["page_icon"],
-)
-st.title(config.config()["app"]["title"])
-
-# Sidebar Enablement
-st.sidebar.success(config.config()["app"]["sidebar"])
+title = config.config()["app"]["title"]
+st.markdown(f"<h1 style='margin-top: -70px; text-align: center;'>{title}</h1>", unsafe_allow_html=True)
 
 # Add App Onboarding
 st.markdown(

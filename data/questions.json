@@ -1,52 +1,68 @@
 [
     {
-        "question": "¿Qué es la inteligencia artificial?",
+        "question": "W jakiej grupie celowej można oczekiwać najwyższej wartości wskaźnika CCS (czytelnictwa cyklu sezonowego) dla Expresu Bydgoskiego?",
         "options": [
-            "La habilidad de una máquina para entender y hablar lenguajes humanos",
-            "La capacidad de una máquina para realizar funciones cognitivas",
-            "El estudio de las emociones humanas"
+            "W całej populacji (osób w wieku 15-75)",
+            "W populacji osób w wieku 15-75 zainteresowanych wiadomościami lokalnymi",
+            "W populacji osób w wieku 15-75, mieszkających w województwie Kujawsko-Pomorskim",
+            "W populacji osób w wieku 15-75, mieszkających w województwie Kujawsko-Pomorskim, zainteresowanych wiadomościami lokalnymi"
         ],
-        "answer": "La capacidad de una máquina para realizar funciones cognitivas",
-        "explanation": "La inteligencia artificial se refiere a la capacidad de una máquina para realizar tareas que normalmente requieren habilidades humanas, como percepción, razonamiento, aprendizaje y resolución de problemas."
+        "answer": "W populacji osób w wieku 15-75, mieszkających w województwie Kujawsko-Pomorskim zainteresowanych wiadomościami lokalnymi",
+        "explanation": "Napisać wyjaśnienie"
     },
     {
-        "question": "¿En qué se basa el Machine Learning?",
+        "question": "Według danych Total Reach:",
         "options": [
-            "Algoritmos que aprenden de los datos sin reglas predefinidas",
-            "Programación basada en reglas sin intervención de datos",
-            "Implementación de algoritmos basados en reglas de aprendizaje humano"
+            "Dla dzienników regionalnych średni zasięg www 20-krotnie przekracza średni zasięg druku i e-wydań",
+            "Łączny zasięg dokładnie 5 dzienników regionalnych przekracza dwa miliony",
+            "Łączny zasięg (w %) dla każdego dziennika regionalnego jest wyższy dla kobiet niż dla mężczyzn",
+            "Łączny zasięg www (w %) dla każdego dziennika dla osób w wieku 60-75 jest niższy niż zasięg dla osób w wieku 15-59"
         ],
-        "answer": "Algoritmos que aprenden de los datos sin reglas predefinidas",
-        "explanation": "Machine Learning se basa en la capacidad de los algoritmos para aprender de los datos sin ser programados explícitamente, permitiendo que las máquinas mejoren automáticamente su rendimiento a medida que obtienen más experiencia."
+        "answer": "Łączny zasięg (w %) dla każdego dziennika regionalnego jest wyższy dla kobiet niż dla mężczyzn",
+        "explanation": "Napisać wyjaśnienie"
     },
     {
-        "question": "¿Cuál es la principal diferencia entre Deep Learning y Machine Learning?",
+        "question": "Badania czytelnictwa prasy w Polsce prowadzone są metodą:",
         "options": [
-            "Machine Learning requiere menos intervención humana",
-            "Deep Learning se basa en algoritmos más complejos",
-            "Deep Learning puede procesar una gama más amplia de recursos de datos"
+            "Wywiadów komputerowych i wywiadów telefonicznych,",
+            "Wywiadów komputerowych i wywiadów bezpośrednich",
+            "Wywiadów telefonicznych i wywiadów bezpośrednich",
+            "Wywiadów komputerowych, telefonicznych i bezpośrednich"
         ],
-        "answer": "Deep Learning puede procesar una gama más amplia de recursos de datos",
-        "explanation": "Deep Learning es una forma de Machine Learning que puede procesar una variedad más amplia de datos, como imágenes y texto, y puede producir resultados más precisos en comparación con el aprendizaje automático tradicional."
+        "answer": "Wywiadów komputerowych i wywiadów bezpośrednich",
+        "explanation": "Napisać wyjaśnienie"
     },
     {
-        "question": "¿Qué es Generative AI?",
+        "question": "Według danych z Audytu PBC za 2023 rok dla dzienników regionalnych:",
         "options": [
-            "Algoritmos que pueden crear contenido nuevo como audio, código e imágenes",
-            "La capacidad de una máquina para razonar y tomar decisiones",
-            "El estudio de cómo las máquinas pueden interactuar con los humanos"
+            "Suma sprzedaży E-wydania stanowi 16% sumy Sprzedaży Wydania",
+            "Suma sprzedaży E-wydania stanowi 16% sumy Sprzedaży Wydania Drukowanego",
+            "Maksymalny udział sprzedaży E-wydania w Sprzedaży Wydania dla pojedynczego dziennika wynosi 37%",
+            "Maksymalny udział sprzedaży E-wydania w Sprzedaży Wydania Drukowanego dla pojedynczego dziennika wynosi 37%"
         ],
-        "answer": "Algoritmos que pueden crear contenido nuevo como audio, código e imágenes",
-        "explanation": "Generative AI se refiere a algoritmos que pueden generar contenido original, como música, imágenes, código y texto. Estos algoritmos tienen la capacidad de crear nuevas obras basadas en patrones y características aprendidas de datos previos."
+        "answer": "Suma sprzedaży E-wydania stanowi 16% sumy Sprzedaży Wydania Drukowanego",
+        "explanation": "Napisać wyjaśnienie"
     },
     {
-        "question": "¿Qué dijo el Dr. Andrew Ng sobre la inteligencia artificial?",
+        "question": "Największy zasięg ma prasa w grupie:",
         "options": [
-            "La inteligencia artificial es un mito",
-            "La inteligencia artificial puede reemplazar a los humanos",
-            "La inteligencia artificial es la nueva electricidad"
+            "Mężczyzn w wieku 15-24",
+            "Mężczyzn w wieku 40-59",
+            "Kobiet w wieku 25-39",
+            "Kobiet w wieku 60 i więcej"
         ],
-        "answer": "La inteligencia artificial es la nueva electricidad",
-        "explanation": "El Dr. Andrew Ng, un experto en inteligencia artificial, describió a la inteligencia artificial como 'la nueva electricidad', destacando su importancia e impacto en la sociedad, al igual que la electricidad lo fue en su momento."
+        "answer": "Kobiet w wieku 25-39",
+        "explanation": "Napisać wyjaśnienie"
+    },
+    {
+        "question": "Wartość estymacji na populację wskaźnika CDT dla Dziennika Łódzkiego dla piątku na poziomie 68 000 oznacza, że:",
+        "options": [
+            "Z co najmniej 1 z ostatnich (4) sobotnich wydań Dziennika Łódzkiego kontakt miało około 68000 osób",
+            "W sobotę z Dziennikiem Łódzkim ma średnio kontakt 68000 osób",
+            "Z sobotnim wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
+            "Sobotnie wydanie Dziennika Łódzkiego kupuje średnio 68000 osób"
+        ],
+        "answer": "Z sobotnim wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
+        "explanation": "Napisać wyjaśnienie"
     }
 ]
