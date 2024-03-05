@@ -25,17 +25,15 @@ st.divider()
 # Create a 3-column layout for the Prev/Next buttons and the question display
 col1, col2, col3 = st.columns([1, 6, 1])
 
+button_font_size = "200px" 
 # Add a Prev button to the left column that goes to the previous question
 with col1:
-    prev_button = col1.button("Previous", key='prev_button')
-    prev_button.empty()  # clear previous content
-    prev_button.markdown(f"<span style='font-size:20px'>{config.config()['app']['quiz']['prev']}</span>", unsafe_allow_html=True)
-    if prev_button:
+    if col1.button(config.config()["app"]["quiz"]["prev"]):
         widgets.prev_question()
 
 # Add a Next button to the right column that goes to the next question
 with col3:
-    if col3.button(f"<span style='font-size:20px'>{config.config()['app']['quiz']['next']}</span>", unsafe_allow_html=True):
+    if col3.button(config.config()["app"]["quiz"]["next"]):
         widgets.next_question_v2()
 
 # Display the actual quiz question
