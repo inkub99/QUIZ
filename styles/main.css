@@ -1,18 +1,17 @@
-/*
- Source: https://github.com/Sven-Bo/digital-resume-template-streamlit/blob/master/styles/main.css
-*/
-
-a {
+/* Zmiana stylu przycisków */
+.stButton button {
     text-decoration: none;
     color: white !important;
     font-weight: 500;
+    font-size: 200px; /* Dodany rozmiar czcionki */
 }
 
-a:hover {
+.stButton button:hover {
     color: #d33682 !important;
     text-decoration: none;
 }
 
+/* Zachowanie istniejących stylów dla innych elementów */
 ul {list-style-type: none;}
 
 hr {
