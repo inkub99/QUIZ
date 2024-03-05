@@ -57,12 +57,12 @@
     {
         "question": "Wartość estymacji na populację wskaźnika CDT dla Dziennika Łódzkiego dla piątku na poziomie 68 000 oznacza, że:",
         "options": [
-            "Z co najmniej 1 z ostatnich (4) sobotnich wydań Dziennika Łódzkiego kontakt miało około 68000 osób",
-            "W sobotę z Dziennikiem Łódzkim ma średnio kontakt 68000 osób",
-            "Z sobotnim wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
-            "Sobotnie wydanie Dziennika Łódzkiego kupuje średnio 68000 osób"
+            "Z co najmniej 1 z ostatnich (4) piątkowych wydań Dziennika Łódzkiego kontakt miało około 68000 osób",
+            "W piątek z Dziennikiem Łódzkim ma średnio kontakt 68000 osób",
+            "Z piątkowym wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
+            "Piątkowe wydanie Dziennika Łódzkiego kupuje średnio 68000 osób"
         ],
-        "answer": "Z sobotnim wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
+        "answer": "Z piątkowym wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
         "explanation": "Napisać wyjaśnienie"
     }
 ]
