@@ -28,10 +28,9 @@ col1, col2, col3 = st.columns([1, 6, 1])
 button_font_size = "200px" 
 # Add a Prev button to the left column that goes to the previous question
 with col1:
-    if col1.button(config.config()["app"]["quiz"]["prev"]):
+    if col1.button(label="<span style='font-size: 200px'>{}</span>".format(config.config()["app"]["quiz"]["prev"]), unsafe_allow_html=True):
         widgets.prev_question()
 
-        st.markdown("<style>#prev_button {font-size: 200px;}</style>", unsafe_allow_html=True)
 
 
 # Add a Next button to the right column that goes to the next question
@@ -39,7 +38,6 @@ with col3:
     if col3.button(config.config()["app"]["quiz"]["next"]):
         widgets.next_question_v2()
 
-        st.markdown("<style>#next_button {font-size: 200px;}</style>", unsafe_allow_html=True)
 
 
 # Display the actual quiz question
