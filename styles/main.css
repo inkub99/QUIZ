@@ -3,7 +3,7 @@
     text-decoration: none;
     color: white !important;
     font-weight: 500;
-    font-size: 200px; /* Dodany rozmiar czcionki */
+    font-size: 1000px; /* Dodany rozmiar czcionki */
 }
 
 .stButton button:hover {
