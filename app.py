@@ -27,7 +27,10 @@ col1, col2, col3 = st.columns([1, 6, 1])
 
 # Add a Prev button to the left column that goes to the previous question
 with col1:
-    if col1.button(f"<span style='font-size:20px'>{config.config()['app']['quiz']['prev']}</span>", unsafe_allow_html=True):
+    prev_button = col1.button("Previous", key='prev_button')
+    prev_button.empty()  # clear previous content
+    prev_button.markdown(f"<span style='font-size:20px'>{config.config()['app']['quiz']['prev']}</span>", unsafe_allow_html=True)
+    if prev_button:
         widgets.prev_question()
 
 # Add a Next button to the right column that goes to the next question
