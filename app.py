@@ -31,6 +31,9 @@ with col1:
     if col1.button(config.config()["app"]["quiz"]["prev"]):
         widgets.prev_question()
 
+        col1.markdown("<style>div.stButton > button:first-child {font-size: 200px;}</style>", unsafe_allow_html=True)
+
+
 # Add a Next button to the right column that goes to the next question
 with col3:
     if col3.button(config.config()["app"]["quiz"]["next"]):
