@@ -3,10 +3,30 @@ from __future__ import annotations
 import openai
 import streamlit as st
 
-from src.quiz.get_quiz_question import get_quiz_question_from_topic
+from src.quiz.get_quiz_questions import get_quiz
 from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
 
+from docx import Document
+from docx.shared import Pt
+
+def replace_text_in_runs(runs, old_text, new_text):
+    for run in runs:
+        if old_text in run.text:
+            run.text = run.text.replace(old_text, new_text)
+            # Zachowanie formatowania tekstu
+            new_run = run._element
+            for elem in new_run:
+                if elem.tag.endswith('rPr'):
+                    new_run.insert(0, elem)
+
+def replace_text_in_docx(doc, old_text, new_text):
+    for paragraph in doc.paragraphs:
+        replace_text_in_runs(paragraph.runs, old_text, new_text)
+    for table in doc.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                replace_text_in_runs(cell.paragraphs[0].runs, old_text, new_text)
 
 def display_question():
     """
@@ -25,7 +45,8 @@ def display_question():
     # Handle first case
     if len(st.session_state.questions) == 0:
         try:
-            first_question = get_quiz_question_from_topic(
+
+            first_question = get_quiz(
                 "ai",
                 st.secrets.openai.api_key,
             )
@@ -36,6 +57,7 @@ def display_question():
                 "https://github.com/Dibakarroy1997/QuizWhizAI/blob/main/README.md",
             )
             return
+     
         st.session_state.questions.append(first_question)
 
     # Disable the submit button if the user has already answered this question
@@ -147,6 +169,24 @@ def display_question_v2():
         st.write(
             f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
         )
+        file_path = "PBC_certyfikat.docx"
+        old_word = "Jan Kowalski"
+        
+        def download_report():
+            doc = Document(file_path)
+            replace_text_in_docx(doc, old_word, st.session_state.name)
+            doc.save("PBC_certyfikat.docx")
+            with open("zmieniony_plik.docx", "rb") as f:
+                doc_bytes = f.read()
+            return doc_bytes
+
+        st.download_button(
+        label="Pobierz dyplom",
+        data=download_report(),
+        file_name="PBC_certyfikat.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
+
         return
 
     # Display the question prompt
@@ -226,7 +266,7 @@ def next_question():
     # If we've reached the end of the questions list, get a new question
     if st.session_state.current_question > len(st.session_state.questions) - 1:
         try:
-            next_question = get_quiz_question_from_topic(
+            next_question = get_quiz(
                 "ai",
                 st.secrets.openai.api_key,
             )

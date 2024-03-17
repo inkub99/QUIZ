@@ -13,14 +13,16 @@ if "current_question" not in st.session_state:
     st.session_state.right_answers = 0
     st.session_state.wrong_answers = 0
 
+# Display title and App Onboarding
 title = config.config()["app"]["title"]
 st.markdown(f"<h1 style='margin-top: -70px; text-align: center;'>{title}</h1>", unsafe_allow_html=True)
-
-# Add App Onboarding
-st.markdown(
-    "\n\n".join(config.config()["app"]["onboarding"]),
-)
+st.markdown("\n\n".join(config.config()["app"]["onboarding"]))
 st.divider()
+
+if "name" not in st.session_state:
+    name = st.text_input("Podaj imię i nazwisko (na potrzeby przygotowania dyplomu)")
+    if name:
+        st.session_state.name = name
 
 # Create a 3-column layout for the Prev/Next buttons and the question display
 col1, col2, col3 = st.columns([1, 6, 1])
@@ -30,13 +32,10 @@ with col1:
     if col1.button(config.config()["app"]["quiz"]["prev"]):
         widgets.prev_question()
 
-
 # Add a Next button to the right column that goes to the next question
 with col3:
     if col3.button(config.config()["app"]["quiz"]["next"]):
         widgets.next_question_v2()
-
-        
 
 # Display the actual quiz question
 with col2:

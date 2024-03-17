@@ -13,7 +13,7 @@
         "question": "Wskaźnik CPW (Czytelnictwo Przeciętnego Wydania) wskazuje na:",
         "options": [
             "Sumę czytelników w określonym okresie",
-            "Średnią liczbe czytelników pisma w określonym okresie",
+            "Średnią liczbę czytelników pisma w określonym okresie",
             "Średnią sprzedaż pisma w określonym okresie"
         ],
         "answer": "Średnią liczbe czytelników pisma w określonym okresie",
@@ -52,7 +52,7 @@
     {
         "question":"Badania czytelnictwa prasy w Polsce przeprowadzane są na grupie:",
         "options": [
-            "Polaków wieku 15-75 lat",
+            "Polaków w wieku 15-75 lat",
             "Tylko pracujących Polaków",
             "Wszystkich Polaków bez względu na wiek"
         ],

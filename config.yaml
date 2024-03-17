@@ -1,7 +1,7 @@
 app:
   page_title: "Witamy w quizie PBC"
   page_icon: "📈"
-  title: "Witamy w quizie PBC📚!"
+  title: "Witamy w quizie PBC!"
   onboarding:
     - "Quiz składa sie z 8 pytań"
   quiz:
