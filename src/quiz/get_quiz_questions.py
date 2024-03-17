@@ -11,7 +11,7 @@ prompt = (
 )
 
 topic = (
-    "Quiz składa sie z 6 pytań"
+    "Quiz składa sie z 8 pytań"
 )
 
 

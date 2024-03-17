@@ -1,68 +1,82 @@
 [
     {
-        "question": "W jakiej grupie celowej można oczekiwać najwyższej wartości wskaźnika CCS (czytelnictwa cyklu sezonowego) dla Expresu Bydgoskiego?",
+        "question": "Który wskaźnik wskazuje na czytelnictwo dzienników z podziałem na dni tygodnia?",
         "options": [
-            "W całej populacji (osób w wieku 15-75)",
-            "W populacji osób w wieku 15-75 zainteresowanych wiadomościami lokalnymi",
-            "W populacji osób w wieku 15-75, mieszkających w województwie Kujawsko-Pomorskim",
-            "W populacji osób w wieku 15-75, mieszkających w województwie Kujawsko-Pomorskim, zainteresowanych wiadomościami lokalnymi"
+            "CCS",
+            "CDT",
+            "CPW",
         ],
-        "answer": "W populacji osób w wieku 15-75, mieszkających w województwie Kujawsko-Pomorskim, zainteresowanych wiadomościami lokalnymi",
-        "explanation": "Napisać wyjaśnienie"
+        "answer": "CDT",
+        "explanation": "CDT wskazuje na liczbę osób, które wg. wyników badania czytają określone wydanie dziennika (np. z piątku)"
     },
     {
-        "question": "Według danych Total Reach:",
+        "question": "Wskaźnik CPW (Czytelnictwo Przeciętnego Wydania) wskazuje na:",
         "options": [
-            "Dla dzienników regionalnych średni zasięg www 20-krotnie przekracza średni zasięg druku i e-wydań",
-            "Łączny zasięg dokładnie 5 dzienników regionalnych przekracza dwa miliony",
-            "Łączny zasięg (w %) dla każdego dziennika regionalnego jest wyższy dla kobiet niż dla mężczyzn",
-            "Łączny zasięg www (w %) dla każdego dziennika dla osób w wieku 60-75 jest niższy niż zasięg dla osób w wieku 15-59"
+            "Sumę czytelników w określonym okresie",
+            "Średnią liczbe czytelników pisma w określonym okresie",
+            "Średnią sprzedaż pisma w określonym okresie",
         ],
-        "answer": "Łączny zasięg (w %) dla każdego dziennika regionalnego jest wyższy dla kobiet niż dla mężczyzn",
-        "explanation": "Napisać wyjaśnienie"
+        "answer": "Średnią liczbe czytelników pisma w określonym okresie",
+        "explanation": "CPW wskazuje na liczbę osób, które wg. wyników badania czytają losowo wybrane wydanie pisma"
     },
     {
-        "question": "Badania czytelnictwa prasy w Polsce prowadzone są metodą:",
+        "question": "Jak nazywa się wskaźnik łączący zasięg druku, e-wydań i stron www marek prasowych?",
         "options": [
-            "Wywiadów komputerowych i wywiadów telefonicznych,",
-            "Wywiadów komputerowych i wywiadów bezpośrednich",
-            "Wywiadów telefonicznych i wywiadów bezpośrednich",
-            "Wywiadów komputerowych, telefonicznych i bezpośrednich"
+            "CPW",
+            "OTS",
+            "Total Reach 360o",
         ],
-        "answer": "Wywiadów komputerowych i wywiadów bezpośrednich",
-        "explanation": "Napisać wyjaśnienie"
+        "answer": "Total Reach 360o",
+        "explanation": "Wskaźnik Total Reach 360o wskazuje na liczbę osób, które wg. wyników badania miały kontakt z marką prasową w określonym czasie (w przypadku dzienników - kontakt z wydaniem z ostatniego tygodnia orz 30 dni dl stron internetowych)"
     },
     {
-        "question": "Według danych z Audytu PBC za 2023 rok dla dzienników regionalnych:",
+        "question": "Zgodnie z metodologi PBC współczytelnictwo to",
         "options": [
-            "Suma sprzedaży E-wydania stanowi 16% sumy Sprzedaży Wydania",
-            "Suma sprzedaży E-wydania stanowi 16% sumy Sprzedaży Wydania Drukowanego",
-            "Maksymalny udział sprzedaży E-wydania w Sprzedaży Wydania dla pojedynczego dziennika wynosi 37%",
-            "Maksymalny udział sprzedaży E-wydania w Sprzedaży Wydania Drukowanego dla pojedynczego dziennika wynosi 37%"
+            "Liczba osób, które czyta konkretny egzemplarz pisma (iloraz czytelnictwa i sprzedaży)",
+            "Procent czytelników jednego pisma, którzy są jednocześnie czytelnikami drugiego pisma"
+            "Suma liczby czytelników dla wielu pism",
         ],
-        "answer": "Suma sprzedaży E-wydania stanowi 16% sumy Sprzedaży Wydania Drukowanego",
-        "explanation": "Napisać wyjaśnienie"
+        "answer": "Procent czytelników jednego pisma, którzy są jednocześnie czytelnikami drugiego pisma",
+        "explanation": "Współczytelnictwo na poziomie XXX oznacza, że XXX % czytelników pisma A czyta jednocześnie pismo B"
     },
     {
-        "question": "Największy zasięg ma prasa w grupie:",
+        "question": "12 fal w badaniu PBC (12 miesiecy) daje wyniki w oparciu o odpowiedzi około:",
         "options": [
-            "Mężczyzn w wieku 15-24",
-            "Mężczyzn w wieku 40-59",
-            "Kobiet w wieku 25-39",
-            "Kobiet w wieku 60 i więcej"
+            "5500 respondentów",
+            "11000 respondentów",
+            "22000 respondentów",
         ],
-        "answer": "Kobiet w wieku 25-39",
-        "explanation": "Napisać wyjaśnienie"
+        "answer": "20000 respondentów",
+        "explanation": "W badaniu PBC rocznie badanych jest około 22000 respondentów"
     },
     {
-        "question": "Wartość estymacji na populację wskaźnika CDT dla Dziennika Łódzkiego dla piątku na poziomie 68 000 oznacza, że:",
+        "question":"Badania czytelnictwa prasy w Polsce przeprowadzane są na grupie:",
         "options": [
-            "Z co najmniej 1 z ostatnich (4) piątkowych wydań Dziennika Łódzkiego kontakt miało około 68000 osób",
-            "W piątek z Dziennikiem Łódzkim ma średnio kontakt 68000 osób",
-            "Z piątkowym wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
-            "Piątkowe wydanie Dziennika Łódzkiego kupuje średnio 68000 osób"
+            "Polaków wieku 15-75 lat",
+            "Tylko pracujących Polaków",
+            "Wszystkich Polaków bez względu na wiek",
         ],
-        "answer": "Z piątkowym wydaniem Dziennika Łódzkiego ma średnio kontakt 68000 osób",
-        "explanation": "Napisać wyjaśnienie"
+        "answer": "Polaków wieku 15-75 lat",
+        "explanation": "Badaniami objęte są osoby w wieku 15-75 bez względu na status zawodowy itd."
+    },
+    {
+        "question":"Badania prasy w Polsce umożliwiają przedstawienie profilu czytelnika prasy:",
+        "options": [
+            "Dla dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
+            "Dla określonych z góry pakietów i poszczególnych pism",
+            "Tylko dla poszczególnych pism",
+        ],
+        "answer": "Dla dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
+        "explanation": "Wszystkie wyliczenia można wykonać zarówno na poziomie poszczególnych pism jak i grup (domyślnych lub utworzonych samemu"
+    },
+    {
+        "question":"Przykładem danych konsumenckich opisujących czytelników prasy jest:",
+        "options": [
+            "Miejsce zamieszkania (np. wielkość miejscowośći zamieszkania)",
+            "Okres kiedy czytelnik ostatni raz odwiedził salon SPA",
+            "Wiek",
+        ],
+        "answer": "Okres kiedy czytelnik ostatni raz odwiedził salon SPA",
+        "explanation": "Wiek oraz miejsce zamieszkania to dane demograficzne"
     }
 ]
