@@ -24,17 +24,17 @@
         "options": [
             "CPW",
             "OTS",
-            "Total Reach 360o",
+            "Total Reach 360°"
         ],
-        "answer": "Total Reach 360o",
-        "explanation": "Wskaźnik Total Reach 360o wskazuje na liczbę osób, które wg. wyników badania miały kontakt z marką prasową w określonym czasie (w przypadku dzienników - kontakt z wydaniem z ostatniego tygodnia orz 30 dni dl stron internetowych)"
+        "answer": "Total Reach 360°",
+        "explanation": "Wskaźnik Total Reach 360° wskazuje na liczbę osób, które wg. wyników badania miały kontakt z marką prasową w określonym czasie (w przypadku dzienników - kontakt z wydaniem z ostatniego tygodnia orz 30 dni dl stron internetowych)"
     },
     {
         "question": "Zgodnie z metodologi PBC współczytelnictwo to",
         "options": [
             "Liczba osób, które czyta konkretny egzemplarz pisma (iloraz czytelnictwa i sprzedaży)",
-            "Procent czytelników jednego pisma, którzy są jednocześnie czytelnikami drugiego pisma"
-            "Suma liczby czytelników dla wielu pism",
+            "Procent czytelników jednego pisma, którzy są jednocześnie czytelnikami drugiego pisma",
+            "Suma liczby czytelników dla wielu pism"
         ],
         "answer": "Procent czytelników jednego pisma, którzy są jednocześnie czytelnikami drugiego pisma",
         "explanation": "Współczytelnictwo na poziomie XXX oznacza, że XXX % czytelników pisma A czyta jednocześnie pismo B"
@@ -44,7 +44,7 @@
         "options": [
             "5500 respondentów",
             "11000 respondentów",
-            "22000 respondentów",
+            "22000 respondentów"
         ],
         "answer": "20000 respondentów",
         "explanation": "W badaniu PBC rocznie badanych jest około 22000 respondentów"
@@ -54,7 +54,7 @@
         "options": [
             "Polaków wieku 15-75 lat",
             "Tylko pracujących Polaków",
-            "Wszystkich Polaków bez względu na wiek",
+            "Wszystkich Polaków bez względu na wiek"
         ],
         "answer": "Polaków wieku 15-75 lat",
         "explanation": "Badaniami objęte są osoby w wieku 15-75 bez względu na status zawodowy itd."
@@ -64,7 +64,7 @@
         "options": [
             "Dla dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
             "Dla określonych z góry pakietów i poszczególnych pism",
-            "Tylko dla poszczególnych pism",
+            "Tylko dla poszczególnych pism"
         ],
         "answer": "Dla dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
         "explanation": "Wszystkie wyliczenia można wykonać zarówno na poziomie poszczególnych pism jak i grup (domyślnych lub utworzonych samemu"
@@ -74,7 +74,7 @@
         "options": [
             "Miejsce zamieszkania (np. wielkość miejscowośći zamieszkania)",
             "Okres kiedy czytelnik ostatni raz odwiedził salon SPA",
-            "Wiek",
+            "Wiek"
         ],
         "answer": "Okres kiedy czytelnik ostatni raz odwiedził salon SPA",
         "explanation": "Wiek oraz miejsce zamieszkania to dane demograficzne"
