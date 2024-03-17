@@ -169,14 +169,14 @@ def display_question_v2():
         st.write(
             f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
         )
-        file_path = "PBC_certyfikat.docx"
+        file_path = "PBC_certyfikat_wzor.docx"
         old_word = "Jan Kowalski"
         
         def download_report():
             doc = Document(file_path)
             replace_text_in_docx(doc, old_word, st.session_state.name)
             doc.save("PBC_certyfikat.docx")
-            with open("PBC_certyfikat_wzor.docx", "rb") as f:
+            with open("PBC_certyfikat.docx", "rb") as f:
                 doc_bytes = f.read()
             return doc_bytes
 
