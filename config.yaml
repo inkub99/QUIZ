@@ -3,7 +3,7 @@ app:
   page_icon: "📈"
   title: "Witamy w quizie PBC📚!"
   onboarding:
-    - "Quiz składa sie z 6 pytań"
+    - "Quiz składa sie z 8 pytań"
   quiz:
     prev: "⬅️"
     next: "➡️"

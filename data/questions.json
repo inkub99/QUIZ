@@ -4,7 +4,7 @@
         "options": [
             "CCS",
             "CDT",
-            "CPW",
+            "CPW"
         ],
         "answer": "CDT",
         "explanation": "CDT wskazuje na liczbę osób, które wg. wyników badania czytają określone wydanie dziennika (np. z piątku)"
@@ -14,7 +14,7 @@
         "options": [
             "Sumę czytelników w określonym okresie",
             "Średnią liczbe czytelników pisma w określonym okresie",
-            "Średnią sprzedaż pisma w określonym okresie",
+            "Średnią sprzedaż pisma w określonym okresie"
         ],
         "answer": "Średnią liczbe czytelników pisma w określonym okresie",
         "explanation": "CPW wskazuje na liczbę osób, które wg. wyników badania czytają losowo wybrane wydanie pisma"
