@@ -176,7 +176,7 @@ def display_question_v2():
             doc = Document(file_path)
             replace_text_in_docx(doc, old_word, st.session_state.name)
             doc.save("PBC_certyfikat.docx")
-            with open("zmieniony_plik.docx", "rb") as f:
+            with open("PBC_certyfikat_wzor.docx", "rb") as f:
                 doc_bytes = f.read()
             return doc_bytes
 
