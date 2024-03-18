@@ -175,7 +175,7 @@ def display_question_v2():
             doc = Document(file_path)
             replace_text_in_docx(doc, "Jan Kowalski", st.session_state.name)
             if str(st.session_state.name)[-1] == 'a' or str(st.session_state.name)[-1] == 'A':
-                replace_text_in_docx(doc, "ukończył", "ukończyła")
+                replace_text_in_docx(doc, "Ukończył", "Ukończyła")
             doc.save("PBC_certyfikat.docx")
             with open("PBC_certyfikat.docx", "rb") as f:
                 doc_bytes = f.read()
