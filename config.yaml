@@ -1,7 +1,7 @@
 app:
   page_title: "Witamy w quizie PBC"
   page_icon: "📈"
-  title: "Witamy w quizie PBC!"
+  title: "Witamy w quizie PBC! "
   onboarding:
     - "Quiz składa sie z 8 pytań"
   quiz:
@@ -10,7 +10,7 @@ app:
     choice: "Odpowiedzi:"
     correct: "Twoja odpowiedź jest prawidłowa🥳"
     wrong: "Twoja odpowiedź jest nieprawidłowa😔 Prawidłowa odpowiedź to: "
-    explanation: "Wyjśnienie 👩‍🏫"
+    explanation: "Wyjaśnienie 👩‍🏫"
     counter_right: "✅ Prawidłowe odpowiedzi: "
     counter_wrong: "❌ Nieprawidłowe odpowiedzi: "
     submit: "Sprawdź odpowiedź"

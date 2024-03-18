@@ -27,7 +27,7 @@
             "Total Reach 360°"
         ],
         "answer": "Total Reach 360°",
-        "explanation": "Wskaźnik Total Reach 360° wskazuje na liczbę osób, które wg. wyników badania miały kontakt z marką prasową w określonym czasie (w przypadku dzienników - kontakt z wydaniem z ostatniego tygodnia orz 30 dni dl stron internetowych)"
+        "explanation": "Wskaźnik Total Reach 360° wskazuje na liczbę osób, które wg. wyników badania miały kontakt z marką prasową w określonym czasie (w przypadku dzienników - kontakt z wydaniem z ostatniego tygodnia oraz z 30 dni dla stron internetowych)"
     },
     {
         "question": "Zgodnie z metodologią PBC współczytelnictwo to",
@@ -62,17 +62,17 @@
     {
         "question":"Badania prasy w Polsce umożliwiają przedstawienie profilu czytelnika prasy:",
         "options": [
-            "Dla dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
+            "Dla określonych z góry pakietów, poszczególnych pism i dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
             "Dla określonych z góry pakietów i poszczególnych pism",
             "Tylko dla poszczególnych pism"
         ],
-        "answer": "Dla dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
+        "answer": "Dla określonych z góry pakietów, poszczególnych pism i dowolnie określonych grup pism (np. 5 dowolnie wybranych dzienników)",
         "explanation": "Wszystkie wyliczenia można wykonać zarówno na poziomie poszczególnych pism jak i grup (domyślnych lub utworzonych samemu"
     },
     {
         "question":"Przykładem danych konsumenckich opisujących czytelników prasy jest:",
         "options": [
-            "Miejsce zamieszkania (np. wielkość miejscowośći zamieszkania)",
+            "Miejsce zamieszkania (np. wielkość miejscowości zamieszkania)",
             "Okres kiedy czytelnik ostatni raz odwiedził salon SPA",
             "Wiek"
         ],
