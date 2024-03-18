@@ -35,7 +35,7 @@ with col1:
 # Nastepne pytanie
 with col3:
     if col3.button(config.config()["app"]["quiz"]["next"]):
-        widgets.next_question_v2()
+        widgets.next_question()
 
 # Wyswietlanie pytania
 with col2:
