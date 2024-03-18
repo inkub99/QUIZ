@@ -7,6 +7,9 @@ from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
 from docx import Document
 from docx.shared import Pt
+from spire.doc import *
+from spire.doc.common import *
+
 
 def replace_text_in_runs(runs, old_text, new_text):
     for run in runs:
@@ -58,12 +61,15 @@ def display_question():
             replace_text_in_docx(doc, "Jan Kowalski", st.session_state.name)
             if str(st.session_state.name).split(' ')[0][-1] == 'a' or str(st.session_state.name).split(' ')[0][-1] == 'A':
                 replace_text_in_docx(doc, "Ukończył", "Ukończyła")
-            doc.save("PBC_certyfikat.docx")
+           # doc.SaveToFile("PBC_certyfikat.pdf", FileFormat.PDF)
+           # doc.Close()
             with open("PBC_certyfikat.docx", "rb") as f:
                 doc_bytes = f.read()
             return doc_bytes
 
-        if name and st.session_state.right_answers >=4:
+        if st.session_state.right_answers>3:
+        
+        #st.session_state.name!='' and st.session_state.right_answers>3:
             st.download_button(
             label="Pobierz dyplom",
             data=download_report(),
@@ -134,8 +140,11 @@ def next_question():
     st.session_state.current_question += 1
     quiz = load_quiz()
     if st.session_state.current_question > len(st.session_state.questions) - 1:
-        next_question = quiz[st.session_state.current_question]
-        st.session_state.questions.append(next_question)
+        try:
+            next_question = quiz[st.session_state.current_question]
+            st.session_state.questions.append(next_question)
+        except:
+            pass
     
 
 

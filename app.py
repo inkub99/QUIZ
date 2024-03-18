@@ -17,7 +17,7 @@ st.markdown(f"<h1 style='margin-top: -70px; text-align: center;'>{title}</h1>", 
 st.markdown("\n\n".join(config.config()["app"]["onboarding"]))
 #st.divider()
 
-# Pytanie o imie
+# Pytanie o imie i nazwisko
 if "name" not in st.session_state:
     name = st.text_input("Podaj imię i nazwisko (na potrzeby przygotowania dyplomu)")
     if name:
