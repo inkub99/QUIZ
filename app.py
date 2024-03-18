@@ -39,4 +39,4 @@ with col3:
 
 # Wyswietlanie pytania
 with col2:
-    widgets.display_question_v2()
+    widgets.display_question()
