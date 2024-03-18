@@ -170,11 +170,12 @@ def display_question_v2():
             f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
         )
         file_path = "PBC_certyfikat_wzor.docx"
-        old_word = "Jan Kowalski"
         
         def download_report():
             doc = Document(file_path)
-            replace_text_in_docx(doc, old_word, st.session_state.name)
+            replace_text_in_docx(doc, "Jan Kowalski", st.session_state.name)
+            if st.session_state.name[-1] == 'a' or st.session_state.name[-1] == 'A':
+                replace_text_in_docx(doc, "ukończył", "ukończyła")
             doc.save("PBC_certyfikat.docx")
             with open("PBC_certyfikat.docx", "rb") as f:
                 doc_bytes = f.read()
