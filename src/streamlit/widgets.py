@@ -174,7 +174,7 @@ def display_question_v2():
         def download_report():
             doc = Document(file_path)
             replace_text_in_docx(doc, "Jan Kowalski", st.session_state.name)
-            if str(st.session_state.name)[-1] == 'a' or str(st.session_state.name)[-1] == 'A':
+            if str(st.session_state.name).split(' ')[0][-1] == 'a' or str(st.session_state.name).split(' ')[0][-1] == 'A':
                 replace_text_in_docx(doc, "Ukończył", "Ukończyła")
             doc.save("PBC_certyfikat.docx")
             with open("PBC_certyfikat.docx", "rb") as f:
