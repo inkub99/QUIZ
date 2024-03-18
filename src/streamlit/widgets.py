@@ -7,8 +7,7 @@ from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
 from docx import Document
 from docx.shared import Pt
-from spire.doc import *
-from spire.doc.common import *
+import docx2pdf
 
 
 def replace_text_in_runs(runs, old_text, new_text):
@@ -57,27 +56,31 @@ def display_question():
         file_path = "PBC_certyfikat_wzor.docx"
         
         def download_report():
+            file_path = "PBC_certyfikat_wzor.docx"
             doc = Document(file_path)
             replace_text_in_docx(doc, "Jan Kowalski", st.session_state.name)
             if str(st.session_state.name).split(' ')[0][-1] == 'a' or str(st.session_state.name).split(' ')[0][-1] == 'A':
                 replace_text_in_docx(doc, "Ukończył", "Ukończyła")
-           # doc.SaveToFile("PBC_certyfikat.pdf", FileFormat.PDF)
-           # doc.Close()
+    
+            doc.save("PBC_certyfikat.docx")
+    
+            docx2pdf.convert("PBC_certyfikat.docx")
+    
             with open("PBC_certyfikat.docx", "rb") as f:
-                doc_bytes = f.read()
-            return doc_bytes
+                pdf_bytes = f.read()
+    
+    #    os.remove("PBC_certyfikat.docx")
+    
+            return pdf_bytes
 
-        if st.session_state.right_answers>3:
-        
-        #st.session_state.name!='' and st.session_state.right_answers>3:
+        if st.session_state.right_answers > 3:
             st.download_button(
-            label="Pobierz dyplom",
-            data=download_report(),
-            file_name="PBC_certyfikat.docx",
-            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    )
-
-        return
+                label="Pobierz dyplom",
+                data=download_report(),
+                file_name="PBC_certyfikat.pdf",
+                mime="application/pdf"
+            )
+            return
 
     # Display the question prompt
     st.write(f"{st.session_state.current_question + 1}. {question['question']}")
