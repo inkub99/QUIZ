@@ -30,7 +30,7 @@
         "explanation": "Wskaźnik Total Reach 360° wskazuje na liczbę osób, które wg. wyników badania miały kontakt z marką prasową w określonym czasie (w przypadku dzienników - kontakt z wydaniem z ostatniego tygodnia orz 30 dni dl stron internetowych)"
     },
     {
-        "question": "Zgodnie z metodologi PBC współczytelnictwo to",
+        "question": "Zgodnie z metodologią PBC współczytelnictwo to",
         "options": [
             "Liczba osób, które czyta konkretny egzemplarz pisma (iloraz czytelnictwa i sprzedaży)",
             "Procent czytelników jednego pisma, którzy są jednocześnie czytelnikami drugiego pisma",
@@ -46,7 +46,7 @@
             "11000 respondentów",
             "22000 respondentów"
         ],
-        "answer": "20000 respondentów",
+        "answer": "22000 respondentów",
         "explanation": "W badaniu PBC rocznie badanych jest około 22000 respondentów"
     },
     {
