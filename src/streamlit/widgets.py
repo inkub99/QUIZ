@@ -1,4 +1,3 @@
-from __future__ import annotations
 import openai
 import streamlit as st
 import os
@@ -54,42 +53,37 @@ def display_question():
         st.write(
             f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
         )
-        file_path = "PBC_certyfikat_wzor.docx"
+        file_name = "PBC_certyfikat_wzor"
 
-        def convert_docx_to_pdf(docx_path, pdf_path):
-            pdfkit.from_file(docx_path, pdf_path)
-        
         def download_report():
-            file_path = "PBC_certyfikat_wzor.docx"
-            doc = Document(file_path)
+            file_name = "PBC_certyfikat_wzor.docx"
+            doc = Document(file_name)
             replace_text_in_docx(doc, "Jan Kowalski", st.session_state.name)
             if str(st.session_state.name).split(' ')[0][-1] == 'a' or str(st.session_state.name).split(' ')[0][-1] == 'A':
                 replace_text_in_docx(doc, "Ukończył", "Ukończyła")
-    
+
+            # Zablokuj edycję dla wszystkich elementów w dokumencie
+            for element in doc.element.body:
+                element.set("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}readOnly", "true")
+
             # Zapisz plik DOCX
             docx_file_path = "PBC_certyfikat.docx"
             doc.save(docx_file_path)
-    
-            # Konwertuj DOCX na PDF za pomocą pdfkit
-            pdf_file_path = "PBC_certyfikat.pdf"
-            os.system(f"pdfkit {docx_file_path} {pdf_file_path}")
 
-            # Odczytaj plik PDF
-            with open(pdf_file_path, "rb") as f:
-                pdf_bytes = f.read()
+            # Odczytaj plik DOCX
+            with open(docx_file_path, "rb") as f:
+                docx_bytes = f.read()
 
-            return pdf_bytes
-
-
+            return docx_bytes
 
 
         if st.session_state.right_answers > 3:
             st.download_button(
-            label="Pobierz dyplom",
-            data =download_report(),
-            file_name="PBC_certyfikat.pdf",
-            mime="application/pdf"
-    )
+                label="Pobierz dyplom",
+                data=download_report(),
+                file_name="PBC_certyfikat.docx",
+                mime="application/pdf"
+            )
 
     # Display the question prompt
     st.write(f"{st.session_state.current_question + 1}. {question['question']}")
