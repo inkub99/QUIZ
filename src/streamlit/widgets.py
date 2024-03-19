@@ -59,6 +59,67 @@ def display_question():
         def convert_docx_to_pdf(docx_path, pdf_path):
             pdfkit.from_file(docx_path, pdf_path)
         
+        from __future__ import annotations
+import openai
+import streamlit as st
+
+from src.quiz.get_quiz_questions import get_quiz
+from src.quiz.get_quiz_questions import load_quiz
+from src.utils import config
+from docx import Document
+from docx.shared import Pt
+from docx2pdf import convert
+import pdfkit
+
+
+def replace_text_in_runs(runs, old_text, new_text):
+    for run in runs:
+        if old_text in run.text:
+            run.text = run.text.replace(old_text, new_text)
+            new_run = run._element
+            for elem in new_run:
+                if elem.tag.endswith('rPr'):
+                    new_run.insert(0, elem)
+
+def replace_text_in_docx(doc, old_text, new_text):
+    for paragraph in doc.paragraphs:
+        replace_text_in_runs(paragraph.runs, old_text, new_text)
+    for table in doc.tables:
+        for row in table.rows:
+            for cell in row.cells:
+                replace_text_in_runs(cell.paragraphs[0].runs, old_text, new_text)
+
+
+def display_question():
+    # Pierwsze pytanie
+    if len(st.session_state.questions) == 0:
+        quiz = load_quiz()
+        first_question = quiz[0]
+        st.session_state.questions.append(first_question)
+
+    # Disable the submit button if the user has already answered this question
+    submit_button_disabled = (
+        st.session_state.current_question in st.session_state.answers
+    )
+
+    # Get the current question from the questions list
+    try:
+        question = st.session_state.questions[st.session_state.current_question]
+    except IndexError:
+        st.markdown(config.config()["app"]["quiz"]["over_message"])
+        st.markdown(config.config()["app"]["quiz"]["score_message"])
+        # Display the current score
+        st.write(
+            f"{config.config()['app']['quiz']['counter_right']}{st.session_state.right_answers}",
+        )
+        st.write(
+            f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
+        )
+        file_path = "PBC_certyfikat_wzor.docx"
+
+        def convert_docx_to_pdf(docx_path, pdf_path):
+            pdfkit.from_file(docx_path, pdf_path)
+        
         def download_report():
             file_path = "PBC_certyfikat_wzor.docx"
             doc = Document(file_path)
@@ -80,6 +141,14 @@ def display_question():
 
             return pdf_bytes
 
+
+        if st.session_state.right_answers > 3:
+            st.download_button(
+            label="Pobierz dyplom",
+            data =download_report(),
+            file_name="PBC_certyfikat.pdf",
+            mime="application/pdf"
+    )
 
         if st.session_state.right_answers > 3:
             st.download_button(
