@@ -64,9 +64,12 @@ def display_question():
     
             doc.save("PBC_certyfikat.docx")
     
-            docx2pdf.convert("PBC_certyfikat.docx")
+            pdf_file_path = "PBC_certyfikat.pdf"
+            docx_file_path = "PBC_certyfikat.docx"
+            docx2pdf.convert(docx_file_path, pdf_file_path)
+
     
-            with open("PBC_certyfikat.docx", "rb") as f:
+            with open(pdf_file_path, "rb") as f:
                 pdf_bytes = f.read()
     
     #    os.remove("PBC_certyfikat.docx")
