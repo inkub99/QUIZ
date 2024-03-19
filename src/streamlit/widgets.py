@@ -1,6 +1,7 @@
 from __future__ import annotations
 import openai
 import streamlit as st
+import os
 
 from src.quiz.get_quiz_questions import get_quiz
 from src.quiz.get_quiz_questions import load_quiz
@@ -80,13 +81,7 @@ def display_question():
             return pdf_bytes
 
 
-        if st.session_state.right_answers > 3:
-            st.download_button(
-            label="Pobierz dyplom",
-            data =download_report(),
-            file_name="PBC_certyfikat.pdf",
-            mime="application/pdf"
-    )
+
 
         if st.session_state.right_answers > 3:
             st.download_button(
