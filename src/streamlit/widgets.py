@@ -7,7 +7,6 @@ from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
 from docx import Document
 from docx.shared import Pt
-from docx2pdf import convert
 import pdfkit
 
 
@@ -70,9 +69,9 @@ def display_question():
             docx_file_path = "PBC_certyfikat.docx"
             doc.save(docx_file_path)
     
-            # Konwertuj DOCX na PDF
+            # Konwertuj DOCX na PDF za pomocą pdfkit
             pdf_file_path = "PBC_certyfikat.pdf"
-            convert(docx_file_path, pdf_file_path)
+            os.system(f"pdfkit {docx_file_path} {pdf_file_path}")
 
             # Odczytaj plik PDF
             with open(pdf_file_path, "rb") as f:
