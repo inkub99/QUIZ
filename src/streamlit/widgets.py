@@ -1,31 +1,25 @@
-import openai
 import streamlit as st
 import os
 
-from src.quiz.get_quiz_questions import get_quiz
 from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
-from docx import Document
-from docx.shared import Pt
-import pdfkit
+import PyPDF2
 
 
-def replace_text_in_runs(runs, old_text, new_text):
-    for run in runs:
-        if old_text in run.text:
-            run.text = run.text.replace(old_text, new_text)
-            new_run = run._element
-            for elem in new_run:
-                if elem.tag.endswith('rPr'):
-                    new_run.insert(0, elem)
+def replace_text_in_pdf(pdf_path, old_text, new_text):
 
-def replace_text_in_docx(doc, old_text, new_text):
-    for paragraph in doc.paragraphs:
-        replace_text_in_runs(paragraph.runs, old_text, new_text)
-    for table in doc.tables:
-        for row in table.rows:
-            for cell in row.cells:
-                replace_text_in_runs(cell.paragraphs[0].runs, old_text, new_text)
+    reader = PyPDF2.PdfReader(pdf_path)
+    writer = PyPDF2.PdfWriter()
+
+    for page_num in range(len(reader.pages)):
+        page = reader.pages[page_num]
+        text = page.extract_text()  # Zmiana: extractText na extract_text
+        #if old_text in text:
+         #   page.merge_page(PyPDF2.PdfReader(new_text).pages[0])
+        writer.add_page(page)
+
+    with open(pdf_path, "wb") as f:
+        writer.write(f)
 
 
 def display_question():
@@ -35,7 +29,6 @@ def display_question():
         first_question = quiz[0]
         st.session_state.questions.append(first_question)
 
-    # Disable the submit button if the user has already answered this question
     submit_button_disabled = (
         st.session_state.current_question in st.session_state.answers
     )
@@ -53,37 +46,27 @@ def display_question():
         st.write(
             f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
         )
-        file_name = "PBC_certyfikat_wzor"
 
         def download_report():
-            file_name = "PBC_certyfikat_wzor.docx"
-            doc = Document(file_name)
-            replace_text_in_docx(doc, "Jan Kowalski", st.session_state.name)
+            file_name = "PBC_certyfikat_wzor.pdf"
+            replace_text_in_pdf(file_name, "Jan Kowalski", st.session_state.name)
             if str(st.session_state.name).split(' ')[0][-1] == 'a' or str(st.session_state.name).split(' ')[0][-1] == 'A':
-                replace_text_in_docx(doc, "Ukończył", "Ukończyła")
+                replace_text_in_pdf(file_name, "Ukończył", "Ukończyła")
 
-            # Zablokuj edycję dla wszystkich elementów w dokumencie
-            for element in doc.element.body:
-                element.set("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}readOnly", "true")
+            with open(file_name, "rb") as f:
+                pdf_bytes = f.read()
 
-            # Zapisz plik DOCX
-            docx_file_path = "PBC_certyfikat.docx"
-            doc.save(docx_file_path)
-
-            # Odczytaj plik DOCX
-            with open(docx_file_path, "rb") as f:
-                docx_bytes = f.read()
-
-            return docx_bytes
-
+            return pdf_bytes
 
         if st.session_state.right_answers > 3:
             st.download_button(
                 label="Pobierz dyplom",
                 data=download_report(),
-                file_name="PBC_certyfikat.docx",
+                file_name="PBC_certyfikat.pdf",
                 mime="application/pdf"
             )
+
+
 
     # Display the question prompt
     st.write(f"{st.session_state.current_question + 1}. {question['question']}")
