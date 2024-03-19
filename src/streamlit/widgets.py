@@ -7,7 +7,8 @@ from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
 from docx import Document
 from docx.shared import Pt
-import docx2pdf
+from docx2pdf import convert
+import pdfkit
 
 
 def replace_text_in_runs(runs, old_text, new_text):
@@ -54,6 +55,9 @@ def display_question():
             f"{config.config()['app']['quiz']['counter_wrong']}{st.session_state.wrong_answers}",
         )
         file_path = "PBC_certyfikat_wzor.docx"
+
+        def convert_docx_to_pdf(docx_path, pdf_path):
+            pdfkit.from_file(docx_path, pdf_path)
         
         def download_report():
             file_path = "PBC_certyfikat_wzor.docx"
@@ -62,28 +66,28 @@ def display_question():
             if str(st.session_state.name).split(' ')[0][-1] == 'a' or str(st.session_state.name).split(' ')[0][-1] == 'A':
                 replace_text_in_docx(doc, "Ukończył", "Ukończyła")
     
-            doc.save("PBC_certyfikat.docx")
-    
-            pdf_file_path = "PBC_certyfikat.pdf"
+            # Zapisz plik DOCX
             docx_file_path = "PBC_certyfikat.docx"
-            docx2pdf.convert(docx_file_path, pdf_file_path)
-
+            doc.save(docx_file_path)
     
+            # Konwertuj DOCX na PDF
+            pdf_file_path = "PBC_certyfikat.pdf"
+            convert(docx_file_path, pdf_file_path)
+
+            # Odczytaj plik PDF
             with open(pdf_file_path, "rb") as f:
                 pdf_bytes = f.read()
-    
-    #    os.remove("PBC_certyfikat.docx")
-    
+
             return pdf_bytes
+
 
         if st.session_state.right_answers > 3:
             st.download_button(
-                label="Pobierz dyplom",
-                data=download_report(),
-                file_name="PBC_certyfikat.pdf",
-                mime="application/pdf"
-            )
-            return
+            label="Pobierz dyplom",
+            data =download_report(),
+            file_name="PBC_certyfikat.pdf",
+            mime="application/pdf"
+    )
 
     # Display the question prompt
     st.write(f"{st.session_state.current_question + 1}. {question['question']}")
