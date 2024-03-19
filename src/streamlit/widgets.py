@@ -13,11 +13,11 @@ def replace_text_in_pdf(pdf_path, old_text, new_text):
 
     for page_num in range(len(reader.pages)):
         page = reader.pages[page_num]
-        text = page.extract_text()  # Zmiana: extractText na extract_text
-        #if old_text in text:
-         #   page.merge_page(PyPDF2.PdfReader(new_text).pages[0])
+        text = page.extract_text()
+        if old_text in text:
+            text = text.replace(old_text, new_text)
+            page.merge_page(PyPDF2.pdf.PageObject.create_text_object(text))
         writer.add_page(page)
-
     with open(pdf_path, "wb") as f:
         writer.write(f)
 
@@ -49,9 +49,9 @@ def display_question():
 
         def download_report():
             file_name = "PBC_certyfikat_wzor.pdf"
-            replace_text_in_pdf(file_name, "Jan Kowalski", st.session_state.name)
+            #replace_text_in_pdf(file_name, "Jan Kowalski", st.session_state.name)
             if str(st.session_state.name).split(' ')[0][-1] == 'a' or str(st.session_state.name).split(' ')[0][-1] == 'A':
-                replace_text_in_pdf(file_name, "Ukończył", "Ukończyła")
+                #replace_text_in_pdf(file_name, "Ukończył", "Ukończyła")
 
             with open(file_name, "rb") as f:
                 pdf_bytes = f.read()
