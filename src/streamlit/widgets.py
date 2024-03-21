@@ -133,7 +133,7 @@ def display_question():
             return pdf_bytes
 
 
-        if st.session_state.right_answers > 3:
+        if st.session_state.right_answers > 3 and len(str(t.session_state.name))>3:
             st.download_button(
             label="Pobierz dyplom",
             data =download_report(),
