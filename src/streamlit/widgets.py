@@ -1,5 +1,4 @@
 from __future__ import annotations
-import openai
 import streamlit as st
 
 from src.quiz.get_quiz_questions import get_quiz
