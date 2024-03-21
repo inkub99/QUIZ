@@ -132,16 +132,17 @@ def display_question():
 
             return pdf_bytes
 
-
-        if st.session_state.right_answers > 3 and len(str(t.session_state.name))>3:
-            st.download_button(
-            label="Pobierz dyplom",
-            data =download_report(),
-            file_name="PBC_certyfikat.pdf",
-            mime="application/pdf"
-    )
-
-
+        try:
+            if st.session_state.right_answers > 3 and len(str(st.session_state.name))>3:
+                st.download_button(
+                label="Pobierz dyplom",
+                data =download_report(),
+                file_name="PBC_certyfikat.pdf",
+                mime="application/pdf"
+        )
+                
+        except:
+            pass
 
 def next_question():
     st.session_state.current_question += 1
@@ -153,8 +154,6 @@ def next_question():
         except:
             pass
     
-
-
 # Define a function to go to the previous question
 def prev_question():
     if st.session_state.current_question > 0:
