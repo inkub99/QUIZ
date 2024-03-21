@@ -139,8 +139,7 @@ def display_question():
             mime="application/pdf"
         )
                 
-        except:
-            pass
+     
 
 def next_question():
     st.session_state.current_question += 1
