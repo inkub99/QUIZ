@@ -6,8 +6,7 @@ from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
 from docx import Document
 from docx.shared import Pt
-import pdfkit
-import os
+from pdf2docx import Converter
 #import fitz 
 #from PIL import Image, ImageDraw, ImageFont
 
@@ -123,7 +122,14 @@ def display_question():
     
             # Konwertuj DOCX na PDF za pomocą pdfkit
             pdf_file_path = "PBC_certyfikat.pdf"
-            os.system(f"pdfkit {docx_file_path} {pdf_file_path}")
+
+            cv = Converter(docx_file_path)
+ 
+            cv.convert(pdf_file_path)
+ 
+            cv.close()
+        
+
 
             # Odczytaj plik PDF
             with open(pdf_file_path, "rb") as f:
