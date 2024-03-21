@@ -125,10 +125,12 @@ def display_question():
             pdf_file_path = "PBC_certyfikat.pdf"
             os.system(f"pdfkit {docx_file_path} {pdf_file_path}")
 
-            pdf_bytes = pdfkit.from_file(docx_file_path, False)
-     
+            # Odczytaj plik PDF
+            with open(pdf_file_path, "rb") as f:
+                pdf_bytes = f.read()
 
             return pdf_bytes
+
         if st.session_state.right_answers > 3 and len(str(st.session_state.name))>3:
             st.download_button(
             label="Pobierz dyplom",
