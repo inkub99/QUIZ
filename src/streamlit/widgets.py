@@ -9,8 +9,8 @@ from docx import Document
 from docx.shared import Pt
 import pdfkit
 import os
-import fitz 
-from PIL import Image, ImageDraw, ImageFont
+#import fitz 
+#from PIL import Image, ImageDraw, ImageFont
 
 def replace_text_in_runs(runs, old_text, new_text):
     for run in runs:

@@ -6,15 +6,6 @@ import openai
 
 from src.utils import constants
 
-prompt = (
-    "Witamy w quizie PBC"
-)
-
-topic = (
-    "Quiz składa sie z 8 pytań"
-)
-
-
 def get_quiz(api_key: str, prompt: str = prompt, topic: str = topic) -> dict[str, str]:
     openai.api_key = api_key
     response = openai.ChatCompletion.create(
