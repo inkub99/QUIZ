@@ -56,7 +56,8 @@ def display_question():
         user_answer = options.radio(
         config.config()["app"]["quiz"]["choice"],
         question["options"],
-        key=st.session_state.current_question,)
+        key=st.session_state.current_question,
+        index=None)
 
         # Display the submit button and disable it if necessary
         submit_button = st.button(
@@ -122,7 +123,8 @@ def display_question():
             # Zapisz plik DOCX
             docx_file_path = "PBC_certyfikat_2.docx"
             doc.save(docx_file_path)
-            pdf_file_path = "PBC_certyfikat.pdf"
+            
+            pdf_file_path = f"{str(st.session_state.name)}_PBC_certyfikat.pdf"
 
             doc = docx.Document(docx_file_path)
 
@@ -139,7 +141,6 @@ def display_question():
             word.Quit()
         
 
-
             # Odczytaj plik PDF
             with open(pdf_file_path, "rb") as f:
                 pdf_bytes = f.read()
@@ -151,7 +152,7 @@ def display_question():
                 st.download_button(
                 label="Pobierz dyplom",
                 data =download_report(),
-                file_name="PBC_certyfikat.pdf",
+                file_name=f"{str(st.session_state.name)}_PBC_certyfikat.pdf",
                 mime="application/pdf"
             )
         except:
