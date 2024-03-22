@@ -4,11 +4,14 @@ import streamlit as st
 from src.quiz.get_quiz_questions import get_quiz
 from src.quiz.get_quiz_questions import load_quiz
 from src.utils import config
+import docx
 from docx import Document
 from docx.shared import Pt
-from pdf2docx import Converter
-#import fitz 
-#from PIL import Image, ImageDraw, ImageFont
+import comtypes
+import comtypes.client
+import os
+os.environ["PY_COM_TYPES_DEBUG"] = "1"
+
 
 def replace_text_in_runs(runs, old_text, new_text):
     for run in runs:
@@ -117,17 +120,23 @@ def display_question():
                 replace_text_in_docx(doc, "Ukończył", "Ukończyła")
     
             # Zapisz plik DOCX
-            docx_file_path = "PBC_certyfikat.docx"
+            docx_file_path = "PBC_certyfikat_2.docx"
             doc.save(docx_file_path)
-    
-            # Konwertuj DOCX na PDF za pomocą pdfkit
             pdf_file_path = "PBC_certyfikat.pdf"
 
-            cv = Converter(docx_file_path)
- 
-            cv.convert(pdf_file_path)
- 
-            cv.close()
+            doc = docx.Document(docx_file_path)
+
+            word = comtypes.client.CreateObject("Word.Application")
+            docx_path = os.path.abspath(docx_file_path)
+            pdf_path = os.path.abspath(pdf_file_path)
+
+            pdf_format = 17  # PDF file format code
+            word.Visible = False
+            in_file = word.Documents.Open(docx_path)
+            in_file.SaveAs(pdf_path, FileFormat=pdf_format)
+            in_file.Close()
+
+            word.Quit()
         
 
 
@@ -137,13 +146,16 @@ def display_question():
 
             return pdf_bytes
 
-        if st.session_state.right_answers > 3 and len(str(st.session_state.name))>3:
-            st.download_button(
-            label="Pobierz dyplom",
-            data =download_report(),
-            file_name="PBC_certyfikat.pdf",
-            mime="application/pdf"
-        )
+        try:
+            if st.session_state.right_answers > 3 and len(str(st.session_state.name))>3:
+                st.download_button(
+                label="Pobierz dyplom",
+                data =download_report(),
+                file_name="PBC_certyfikat.pdf",
+                mime="application/pdf"
+            )
+        except:
+            pass
                 
      
 
